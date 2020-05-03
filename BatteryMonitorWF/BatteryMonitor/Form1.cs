@@ -57,13 +57,11 @@ namespace BatteryMonitor
                     this.labelTime.Visible = true;
                     break;
                 case BatteryChargeStatus.High | BatteryChargeStatus.Charging: // > 67% 
-                    Console.Beep();
-                    this.labelStatus.ForeColor = Color.Red;
                     this.labelFullLifetime.Visible = false;
                     this.labelTime.Visible = false;
-                    this.BackColor = Color.Red;
                     if (ChargePercent > 90)
                     {
+                        this.BackColor = Color.Red; 
                         Console.Beep();
                         this.labelStatus.ForeColor = Color.Red;
                     }
